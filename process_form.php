@@ -67,7 +67,8 @@
             $err = $conn->connect_error;
          }
 
-         $sql = "INSERT INTO user (nama, email, photo) VALUES ('$nama', '$email', '$file')";
+         $randomId = rand();
+         $sql = "INSERT INTO user (id, name, email, photo) VALUES ('$randomId','$nama', '$email', '$file')";
          $result = $conn->query($sql);
 
          if (!$result) {
