@@ -4,10 +4,20 @@
    use Aws\S3\S3Client;
    use Aws\Exception\AwsException;
 
-   $db_host = 'mydb.c1ym4s4w8bbm.us-east-1.rds.amazonaws.com';
-   $db_user = 'root';
-   $db_pass = 'admin123';
-   $db_name = 'mydb';
+   // Start Database Credentials
+   $db_host = 'YOUR_DB_HOST'; // Change to your database host
+   $db_user = 'YOUR_DB_USER'; // Change to your database user
+   $db_pass = 'YOUR_DB_PASSWORD'; // Change to your database password
+   $db_name = 'YOUR_DB_NAME'; // Change to your database
+   // End Database Credentials
+
+   // Start AWS Credentials
+   $region = 'us-east-1'; // Change to your region
+   $key = 'YOUR_AWS_KEY'; // Change to your access key id
+   $secret = 'YOUR_AWS_SECRET'; // Change to your secret key
+   $token = 'YOUR_AWS_TOKEN'; // Change to your token
+   $bucket_name = 'YOUR_AWS_BUCKET'; // Change to your S3 bucket name
+   // End AWS Credentials
 
    $success = false;
    $err = '';
@@ -22,15 +32,14 @@
 
          $file_name = $_FILES['photo']['name'];   
          $temp_file_location = $_FILES['photo']['tmp_name'];
-         $bucket_name = 'mybucket-9345';
 
          $config = [
             'version' => 'latest',
-            'region' => 'us-east-1',
+            'region' => $region,
             'credentials' => [
-               'key'    => "ASIAWB7B4M7TKJPZOBXC",
-               'secret' => "TRxGQV/wLWbKJR4xe0b/lHAaFgTlOAElmN3N3gVC",
-               'token' => "FwoGZXIvYXdzEP3//////////wEaDP+BSsPcgQ2y19amACK9AYyDVK95t1DlWPqYsZ3Nja/YToJRx2PcCTnkmNvMBxMy62naAXBtVLC0xnZsdXx5ifGmXwyyI5u41umhPaHaZBMbuiLTtri4inStamQ2dB3rsqzP4kWzCH1xOSDbztYUPIZEX2bgtYbxPgam05WyIx3g1m727l6gQ5kJDN6yg5l9FTBRcTXcxBmrSRSCU/haebho+2+0OD1ScJbgZMeQF527oeNnF+KcRuIsZ5ksaKBbGffUTWoxE3g9IzN2VSjH5t2sBjIttKNQmpiT38QE06cDBxvu5vBz9TFvqvUA0mjY/i52TajiC64+R0R3Ag/jaInL"
+               'key'    => $key,
+               'secret' => $secret,
+               'token' => $token
             ]
          ];
 
@@ -45,10 +54,6 @@
             ]);
 
             $success = true;
-            $file = $res['ObjectURL'];
-
-            // echo "Uploaded $file_name to $bucket_name.\n";
-            // var_dump($res['ObjectURL']);
          } catch (Exception $exception) {
             $err = $exception->getMessage();
          }
