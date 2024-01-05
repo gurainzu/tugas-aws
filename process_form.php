@@ -5,18 +5,18 @@
    use Aws\Exception\AwsException;
 
    // Start Database Credentials
-   $db_host = 'YOUR_DB_HOST'; // Change to your database host
-   $db_user = 'YOUR_DB_USER'; // Change to your database user
-   $db_pass = 'YOUR_DB_PASSWORD'; // Change to your database password
-   $db_name = 'YOUR_DB_NAME'; // Change to your database
+   $db_host = 'mysql.cdgiygu4icar.us-east-1.rds.amazonaws.com'; // Change to your database host
+   $db_user = 'admin'; // Change to your database user
+   $db_pass = 'perseke07'; // Change to your database password
+   $db_name = 'mydb'; // Change to your database
    // End Database Credentials
 
    // Start AWS Credentials
    $region = 'us-east-1'; // Change to your region
-   $key = 'YOUR_AWS_KEY'; // Change to your access key id
-   $secret = 'YOUR_AWS_SECRET'; // Change to your secret key
-   $token = 'YOUR_AWS_TOKEN'; // Change to your token
-   $bucket_name = 'YOUR_AWS_BUCKET'; // Change to your S3 bucket name
+   $key = 'ASIA3CLQHM24ND72CWGK'; // Change to your access key id
+   $secret = 'LHQoTZ+5mzFxTDTrRjtd2LdmOMtZA3j16EL3VtxU'; // Change to your secret key
+   $token = 'FwoGZXIvYXdzEAkaDCc1vRwtZbq04m7y0CLDASUJZG2XirSNUPGCpJ+uSX+5dPnOQfJ5H7EEN/F1jhPtqd+wl2JSjwOWKUrjo989hzOrXSRgLzh4sNAZzIHwHZhYfATjWQTGR5fsPddTwtizIJY4GFIKIAFTpZw+nkicVlGTj3IhzgYYBkZJtoiHN1f9Gi2/lltWjFKqiMM99AbH1kuBSy+wPlOhfBvC9d/KKzVwf/cu+l13vLXH1qAF9oYYSjY/LrzMixPH9i/QVOVbjjOwIU0N7qJ52R5NT3WI8TG5lCjwt+CsBjItidS0UuecNzNmJL1h+R0lYhusiW4Zezz5K4ePqc17cWXIHQR4k9dRZEtjNi7U'; // Change to your token
+   $bucket_name = 'geranbucket'; // Change to your S3 bucket name
    // End AWS Credentials
 
    $success = false;
